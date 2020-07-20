@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="http://ws/" xmlns:tns="http://ws/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="ErroIdFault" nillable="true" type="tns:infoFault"/>
+
+  <xs:element name="TodosOsExames" type="tns:TodosOsExames"/>
+
+  <xs:element name="TodosOsExamesResponse" type="tns:TodosOsExamesResponse"/>
+
+  <xs:element name="exame" type="tns:exame"/>
+
+  <xs:element name="filtros" type="tns:filtros"/>
+
+  <xs:complexType name="TodosOsExames">
+    <xs:sequence>
+      <xs:element name="filtros" type="tns:filtros" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="filtros">
+    <xs:sequence>
+      <xs:element name="exame" type="tns:filtro" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="filtro">
+    <xs:sequence>
+      <xs:element name="id" type="xs:int" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="TodosOsExamesResponse">
+    <xs:sequence>
+      <xs:element name="exame" type="tns:exame" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="exame">
+    <xs:sequence>
+      <xs:element name="id" type="xs:int"/>
+      <xs:element name="nomeExame" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="infoFault">
+    <xs:sequence>
+      <xs:element name="dataErro" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="mensagem" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+
