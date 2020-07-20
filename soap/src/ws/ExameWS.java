@@ -8,6 +8,7 @@ import javax.jws.WebParam;
 import javax.jws.WebResult;
 import javax.jws.WebService;
 
+import dao.ErroIdException;
 import dao.ExameDAO;
 import modelo.Exame;
 import modelo.Filtro;
@@ -20,7 +21,7 @@ public class ExameWS {
 	
 	@WebMethod(operationName = "TodosOsExames")
 	@WebResult(name = "exame")
-	public List<Exame> getExames(@WebParam(name="filtros") Filtros filtros) {
+	public List<Exame> getExames(@WebParam(name="filtros") Filtros filtros) throws ErroIdException {
 		
 		List<Filtro> lista = filtros.getLista();
 		

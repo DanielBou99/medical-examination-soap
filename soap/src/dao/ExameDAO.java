@@ -65,18 +65,22 @@ public class ExameDAO {
 		return exame;
 	}
 
-	public ArrayList<Exame> pegarDados(List<Filtro> filtros) {
+	public ArrayList<Exame> pegarDados(List<Filtro> filtros) throws ErroIdException {
 			
 		ITENS.clear();
 		
-		// null é ? no parametro do SoapUI
-		if (filtros.get(0).getId() == null) {
-			popularItensNoMapa();
-			System.out.println("Todos itens");
-		} else {
-			System.out.println("Unico Item");
-			Integer id = filtros.get(0).getId();
-			adicionarItemNoMapa(id);
+		try {
+			// null é ? no parametro do SoapUI
+			if (filtros.get(0).getId() == null) {
+				popularItensNoMapa();
+				System.out.println("Todos itens");
+			} else {
+				System.out.println("Unico Item");
+				Integer id = filtros.get(0).getId();
+				adicionarItemNoMapa(id);
+			}
+		} catch (Exception e) {
+			throw new ErroIdException(e.getMessage());
 		}
 		
 		ArrayList<Exame> resultados = new ArrayList<Exame>();
