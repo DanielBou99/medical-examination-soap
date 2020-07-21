@@ -38,6 +38,9 @@ public class InfoFault {
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar dataErro;
     protected String mensagem;
+    
+    public InfoFault() {
+    }
 
     /**
      * Obtém o valor da propriedade dataErro.
@@ -87,4 +90,7 @@ public class InfoFault {
         this.mensagem = value;
     }
 
+    public InfoFault(String mensagem) {
+        this.mensagem = mensagem;
+    }
 }

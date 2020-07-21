@@ -70,7 +70,6 @@ public class ExameDAO {
 		ITENS.clear();
 		
 		try {
-			// null é ? no parametro do SoapUI
 			if (filtros.get(0).getId() == null) {
 				popularItensNoMapa();
 				System.out.println("Todos itens");
@@ -105,6 +104,4 @@ public class ExameDAO {
 		
 		ITENS.put(String.valueOf(exame.getId()), exame);
 	}
-
-
 }

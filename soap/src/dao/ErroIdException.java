@@ -12,7 +12,7 @@ public class ErroIdException extends Exception {
 	}
 	
 	public InfoFault getFaultInfo() {
-		return new InfoFault(new Date() , "ID Invalido");
+		return new InfoFault(new Date() , "ID Invalido testeeeee");
 	}
 
 }

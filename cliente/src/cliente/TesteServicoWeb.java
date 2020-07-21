@@ -12,7 +12,7 @@ public class TesteServicoWeb {
 	Filtros filtros = new Filtros();
 	Filtro filtro = new Filtro();
 	
-	filtro.setId(30);
+	filtro.setId(2);
 	
 	filtros.getExame().add(filtro);
 	

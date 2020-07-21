@@ -19,4 +19,5 @@ public class InfoFault {
 		this.mensagem = mensagem;
 	}
 	
+	
 }
